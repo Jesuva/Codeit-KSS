@@ -1,0 +1,15 @@
+l = ["WRITE A","WRITE B","WRITE C","UNDO","READ","REDO","READ"]
+doc = []
+deleted =[]
+for e in l:
+  if e[0]=="W":
+    doc.append(e[-1])
+  if e[0]=="U":
+    d = doc.pop()
+    deleted.append(d)
+  if e[0]=="R" and e[3]=="D":
+      print(''.join(map(str,doc)),end=' ')
+  if e[0]=="R" and e[3]=="O":
+    x = deleted.pop()
+    doc.append(x)
+  
